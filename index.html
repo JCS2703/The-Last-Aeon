@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Last Aeon</title>
+    <meta name="description" content="The Last Aeon — Conocimiento clasificado y guía." />
+
+    <!-- Fonts: medieval style (display) + humanist (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Cinzel:wght@400;600;800&family=Uncial+Antiqua&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="mystical-background"></div>
+    <canvas id="bgParticles" class="bg-particles" aria-hidden="true"></canvas>
+    <canvas id="cursorTrail" class="cursor-trail" aria-hidden="true"></canvas>
+    <div class="container">
+      <header class="header">
+        <div class="order-logo" aria-hidden="true">
+          <img src="./assets/logotipo.png" alt="Logotipo The Last Aeon" class="brand-logo brand-logo--cropped" />
+          <div class="rune rune-left" aria-hidden="true"></div>
+          <div class="rune rune-right" aria-hidden="true"></div>
+          <canvas id="logoSand" class="logo-sand" aria-hidden="true"></canvas>
+        </div>
+        <h1 class="order-title" id="orderTitle">The Last Aeon</h1>
+        <div class="runic-divider"></div>
+      </header>
+
+      <div id="mainMenu" class="menu-grid">
+        <div class="menu-card" onclick="showContent('guardianes')"><div class="card-icon">🛡️</div><h3 class="card-title">Guardianes</h3><p class="card-description">Protectores sagrados y sus enseñanzas</p></div>
+        <div class="menu-card" onclick="showContent('etica')"><div class="card-icon">⚖️</div><h3 class="card-title">Ética y Leyes</h3><p class="card-description">Códigos morales y leyes fundamentales</p></div>
+        <div class="menu-card" onclick="showContent('calendario')"><div class="card-icon">🌙</div><h3 class="card-title">Calendario</h3><p class="card-description">Ciclos sagrados y festivales</p></div>
+        <div class="menu-card" onclick="showContent('iniciacion')"><div class="card-icon">🔥</div><h3 class="card-title">Iniciación</h3><p class="card-description">El camino del despertar</p></div>
+        <div class="menu-card" onclick="showContent('pequenas-magias')"><div class="card-icon">✨</div><h3 class="card-title">Pequeñas Magias</h3><p class="card-description">Prácticas y hechizos menores</p></div>
+        <div class="menu-card" onclick="showContent('proteccion')"><div class="card-icon">🔮</div><h3 class="card-title">Magias de Protección</h3><p class="card-description">Escudos y defensas sagradas</p></div>
+        <div class="menu-card" onclick="showContent('jerarquia')"><div class="card-icon">👑</div><h3 class="card-title">Jerarquía</h3><p class="card-description">Estructura y rangos</p></div>
+        <div class="menu-card" onclick="showContent('simbolos')"><div class="card-icon">🔯</div><h3 class="card-title">Símbolos</h3><p class="card-description">Runas y signos sagrados</p></div>
+      </div>
+
+      <div id="guardianes" class="content-area">
+        <div class="content-header">
+          <h2 class="content-title">🛡️ Guardianes</h2>
+          <button class="back-button" onclick="showMenu()">← Volver al Menú</button>
+        </div>
+        <div class="content-body">
+          <div class="rich-content" data-src="./content/guardianes.html"><div class="card"><h3>Cargando contenido…</h3></div></div>
+        </div>
+      </div>
+
+      <div id="etica" class="content-area">
+        <div class="content-header">
+          <h2 class="content-title">⚖️ Ética y Leyes</h2>
+          <button class="back-button" onclick="showMenu()">← Volver al Menú</button>
+        </div>
+        <div class="content-body">
+          <div class="rich-content" data-src="./content/etica.html"><div class="card"><h3>Cargando contenido…</h3></div></div>
+        </div>
+      </div>
+
+      <div id="calendario" class="content-area">
+        <div class="content-header">
+          <h2 class="content-title">🌙 Calendario</h2>
+          <button class="back-button" onclick="showMenu()">← Volver al Menú</button>
+        </div>
+        <div class="content-body">
+          <div class="rich-content" data-src="./content/calendario.html"><div class="card"><h3>Cargando contenido…</h3></div></div>
+        </div>
+      </div>
+
+      <div id="iniciacion" class="content-area">
+        <div class="content-header">
+          <h2 class="content-title">🔥 Iniciación</h2>
+          <button class="back-button" onclick="showMenu()">← Volver al Menú</button>
+        </div>
+        <div class="content-body">
+          <div class="rich-content" data-src="./content/iniciacion.html"><div class="card"><h3>Cargando contenido…</h3></div></div>
+        </div>
+      </div>
+
+      <div id="pequenas-magias" class="content-area">
+        <div class="content-header">
+          <h2 class="content-title">✨ Pequeñas Magias</h2>
+          <button class="back-button" onclick="showMenu()">← Volver al Menú</button>
+        </div>
+        <div class="content-body">
+          <div class="rich-content" data-src="./content/pequenas-magias.html"><div class="card"><h3>Cargando contenido…</h3></div></div>
+        </div>
+      </div>
+
+      <div id="proteccion" class="content-area">
+        <div class="content-header">
+          <h2 class="content-title">🔮 Magias de Protección</h2>
+          <button class="back-button" onclick="showMenu()">← Volver al Menú</button>
+        </div>
+        <div class="content-body">
+          <div class="rich-content" data-src="./content/proteccion.html"><div class="card"><h3>Cargando contenido…</h3></div></div>
+        </div>
+      </div>
+
+      <div id="jerarquia" class="content-area">
+        <div class="content-header">
+          <h2 class="content-title">👑 Jerarquía</h2>
+          <button class="back-button" onclick="showMenu()">← Volver al Menú</button>
+        </div>
+        <div class="content-body">
+          <div class="rich-content" data-src="./content/jerarquia.html"><div class="card"><h3>Cargando contenido…</h3></div></div>
+        </div>
+      </div>
+
+      <div id="simbolos" class="content-area">
+        <div class="content-header">
+          <h2 class="content-title">🔯 Símbolos</h2>
+          <button class="back-button" onclick="showMenu()">← Volver al Menú</button>
+        </div>
+        <div class="content-body">
+          <div class="rich-content" data-src="./content/simbolos.html"><div class="card"><h3>Cargando contenido…</h3></div></div>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="./js/app.js"></script>
+  </body>
+</html>
