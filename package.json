@@ -1,0 +1,49 @@
+{
+  "name": "the-last-aeon-desktop",
+  "version": "1.0.0",
+  "description": "Aplicación de escritorio para The Last Aeon",
+  "main": "scripts/main.js",
+  "author": "The Last Aeon",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "build-win": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^20.3.12",
+    "electron-builder": "^24.6.4"
+  },
+  "build": {
+    "appId": "com.thelastaeon.desktop",
+    "productName": "The Last Aeon",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "scripts/**/*",
+      "index.html",
+      "css/**/*",
+      "js/**/*",
+      "content/**/*",
+      "assets/**/*"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "assets/logotipo.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "The Last Aeon"
+    }
+  }
+}
